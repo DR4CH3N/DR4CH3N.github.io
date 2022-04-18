@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Oswald:wght@600;700&display=swap');
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    scroll-padding-top: 120px;
+}
+
+html {
+    font-size: 18px; 
+    /* !important (é usada antes do ponto de virgula fecharem num elemento) pode ser usado para fazer uma regra prevalescer, ainda que seja menos especifica (em caso de conflito com alguma outra tag, a tag !important faz
+    com que ela seja executada primeiro independente de sua posição) */
+
+    /* variaveis no CSS: */
+
+     --fontebase: 18;  /* declaração de variavel */
+     font-size: var(--fontebase); /* recuperação de variavel */
+     scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'merriweather', serif;
+}
+
+img, iframe, video {
+    max-width: 100%;
+}
+
+h1 {
+    font-family: 'oswald', sans-serif;
+    font-size: 3rem;   
+    font-weight: 100;  
+}
+
+header {
+    background-color: #fff;  
+    text-align: center; 
+    position: sticky;
+    top: 0;
+    padding-bottom: .5rem;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+nav a{
+    text-decoration: none;
+    color: #333;
+    font-family: 'oswald', sans-serif;
+    font-weight: normal;
+    transition: all .8s;
+    padding: .5rem .6rem;
+}
+
+nav a:hover {
+    color: rgb(255, 238, 60);
+    background-color: #000;
+}
+
+main, section {
+    height: 73vh;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+#produto {
+    background-image: url(imagens/imagens-comprimidas/h13-background-img-1-min.jpg);
+    background-size: cover;
+    background-position-x: center;
+
+}
+.conteudo {
+    width: 90%;
+    margin: auto;
+    max-width: 800px;
+}
+.conteudo h1 {
+    text-transform: uppercase;
+    font-family: 'oswald', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.conteudo p {
+    line-height: 2rem;
+}
+.cta {
+    font-family: 'oswald', sans-serif;
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 600;
+    background-color: rgb(255, 238, 60);
+    padding: 1.15rem 1.8rem;
+    line-height: 5.5rem;
+    color: #000;  
+    letter-spacing: 3px; /* controla o espaço entre as letras/caracteres */
+    text-transform: uppercase;
+}
+.cta::before /* antes do CTA este comando sera executado */ {
+    content: "+"; /* adiciona qualquer elemento usando o proprio CSS */
+    margin-right: 0.8rem;
+
+}
+.verde-agua {
+    background-color: #26ccca;
+    color: #fff;
+}
+#ux {
+    color: #fff;
+    background-image: url(../codigo/imagens/imagens-comprimidas/h13-background-img-2-min.jpg);
+}
+#motion {
+    background-image: url(../codigo/imagens/imagens-comprimidas/h13-background-img-3-min.jpg);
+    background-size: cover;
+    background-position-x: center;
+}
+#brand{
+    background-image: url(../codigo/imagens/imagens-comprimidas/h13-background-img-4-min.jpg);
+    color: #fff;
+    background-size: cover;
+    background-position-x: center;
+}
+.texto {
+    color: #999;
+}
+#print {
+    background-image: url(../codigo/imagens/imagens-comprimidas/h13-background-img-5-min.jpg);
+    color: #fff;
+    background-size: cover;
+    background-position-x: center;
+}
+
+/* para telas acima de 700px */
+@media screen and (min-width:700px) {
+    header {
+       justify-content: space-around;
+       display: flex;
+       height: 10vh;
+       align-items: center;
+    }
+    .logo {
+        width: 25%;
+    }
+    header nav {
+        width: 70%;
+        max-width: 800px;
+    }
+    /* background-attachment fixed faz o fundo ter um efeito de parallax */
+    #produto {
+        background-attachment: fixed;
+    }
+    #motion {
+        background-attachment: fixed;
+    }
+    #print {
+        background-attachment: fixed;
+    }
+    .conteudo {
+        width: 50%;
+        max-width: 800px;
+        margin: 0;
+        margin-left: 4rem;
+    }
+    main h1, section h1 {
+        font-size: 5rem;
+        margin-bottom: -0.6rem;
+    }
+    nav a {
+        font-size: 1.1rem;
+        padding: 0.7rem 1.0rem;
+    }
+}
